@@ -1,9 +1,11 @@
 var Posts = require('../models/postsModel');
+var auth = require('../middlewares/auth');
 
 module.exports = function(router, app) {
 
+  router.use(auth);
   router.get('/', function(req, res) {
-    res.json({ message: 'hooray! welcome to our api!' });   
+    res.json({ message: 'Welcome back Barry!' });   
   });
 
   // routes for /post/

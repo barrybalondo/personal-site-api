@@ -16,5 +16,4 @@ mongoose.connect(process.env.DB);
 var postRouter = express.Router();
 postController(postRouter, app);
 
-
 app.listen(port);
