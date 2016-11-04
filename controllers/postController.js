@@ -13,7 +13,7 @@ module.exports = function(router, app) {
   router.post('/posts', auth, function(req, res){
     var newPost = Posts({
       title: req.body.title,
-      description: req.body.description
+      content: req.body.content
       });
       newPost.save(function(err){
         if(err)
@@ -55,6 +55,8 @@ module.exports = function(router, app) {
         res.json('Deleted!')
       })
   });
+
+  // for future ref router.routes('').get(function(req,res){}).post(...) is possible
 
   app.use('/api', router);
 
